@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -11,6 +13,10 @@ from api.router.review import review_router
 app = FastAPI(title="BookIt API",
     description="A simple bookings platform API",
     version="1.0.0")
+
+if os.getenv("DEBUG") == "False":
+    app.docs_url = "/docs"  # Keep docs available
+    app.redoc_url = "/redoc"
 
 app.add_middleware(
     CORSMiddleware,
