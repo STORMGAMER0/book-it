@@ -18,9 +18,10 @@ def seed_database():
 
     db = SessionLocal()
     try:
-        # Check if data already exists
-        if db.query(User).count() > 0:
-            print("Database already has data. Skipping seed.")
+        # Check if our specific admin user exists
+        existing_admin = db.query(User).filter(User.email == "admin@gmail.com").first()
+        if existing_admin:
+            print("Seed data already exists. Skipping seed.")
             return
 
         print("Seeding database with sample data...")
@@ -35,7 +36,7 @@ def seed_database():
         )
         db.add(admin_user)
 
-        # Create regular users 
+        # Create regular users
         users = []
         user_data = [
             ("John Doe", "john.doe@gmail.com", "123456"),
