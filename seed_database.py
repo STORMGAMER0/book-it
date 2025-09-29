@@ -29,20 +29,20 @@ def seed_database():
         admin_user = User(
             id=uuid.uuid4(),
             name="Admin User",
-            email="admin@bookit.com",
+            email="admin@gmail.com",
             password_hash=hash_password("admin123"),
             role=Roles.ADMIN
         )
         db.add(admin_user)
 
-        # Create regular users
+        # Create regular users 
         users = []
         user_data = [
-            ("John Doe", "john@example.com", "password123"),
-            ("Jane Smith", "jane@example.com", "password123"),
-            ("Bob Johnson", "bob@example.com", "password123"),
-            ("Alice Brown", "alice@example.com", "password123"),
-            ("Charlie Wilson", "charlie@example.com", "password123")
+            ("John Doe", "john.doe@gmail.com", "123456"),
+            ("Jane Smith", "jane.smith@gmail.com", "123456"),
+            ("Bob Johnson", "bob.johnson@gmail.com", "123456"),
+            ("Alice Brown", "alice.brown@gmail.com", "123456"),
+            ("Charlie Wilson", "charlie.wilson@gmail.com", "123456")
         ]
 
         for name, email, password in user_data:
