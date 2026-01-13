@@ -39,6 +39,10 @@ def get_db():
         db.close()
 
 def create_tables():
+    from models.user import User
+    from models.booking import Booking
+    from models.service import Service
+    from models.review import Review
     Base.metadata.create_all(bind=engine)
     logger.info("database tables created successfully✅")
 

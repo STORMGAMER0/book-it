@@ -21,12 +21,6 @@ A production-ready REST API for a simple bookings platform. Users can browse ser
 
 ### Database Choice: PostgreSQL
 
-**I Chose PostgreSQL over MongoDB for the following reasons:**
-
-1. Booking conflicts require strict transactional integrity to prevent double-bookings which mongoDB can not execute effectively
-2. There are Clear relationships between users, services, bookings, and reviews benefit from foreign key constraints
-3. There are Complex filtering and reporting queries which is more efficient with SQL
-4.  Database-level constraints ensure data integrity (unique bookings per service time slot). this is provided with postgres
 
 ### Core Architecture
 
